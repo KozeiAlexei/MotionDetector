@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E71432D6-1299-429E-B63A-D44C3E784276}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MotionDetector.Video</RootNamespace>
+    <AssemblyName>MotionDetector.Video</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DirectShow\CameraControlProperty.cs" />
+    <Compile Include="DirectShow\FilterInfo.cs" />
+    <Compile Include="DirectShow\FilterInfoCollection.cs" />
+    <Compile Include="DirectShow\IAMCameraControl.cs" />
+    <Compile Include="DirectShow\IAMCrossbar.cs" />
+    <Compile Include="DirectShow\IAMStreamConfig.cs" />
+    <Compile Include="DirectShow\IAMVideoControl.cs" />
+    <Compile Include="DirectShow\IBaseFilter.cs" />
+    <Compile Include="DirectShow\ICaptureGraphBuilder2.cs" />
+    <Compile Include="DirectShow\ICreateDevEnum.cs" />
+    <Compile Include="DirectShow\IEnumFilters.cs" />
+    <Compile Include="DirectShow\IEnumPins.cs" />
+    <Compile Include="DirectShow\IFileSourceFilter.cs" />
+    <Compile Include="DirectShow\IFilterGraph.cs" />
+    <Compile Include="DirectShow\IFilterGraph2.cs" />
+    <Compile Include="DirectShow\IGraphBuilder.cs" />
+    <Compile Include="DirectShow\IMediaControl.cs" />
+    <Compile Include="DirectShow\IMediaEventEx.cs" />
+    <Compile Include="DirectShow\IMediaFilter.cs" />
+    <Compile Include="DirectShow\IPersist.cs" />
+    <Compile Include="DirectShow\IPin.cs" />
+    <Compile Include="DirectShow\IPropertyBag.cs" />
+    <Compile Include="DirectShow\IReferenceClock.cs" />
+    <Compile Include="DirectShow\ISampleGrabber.cs" />
+    <Compile Include="DirectShow\ISampleGrabberCB.cs" />
+    <Compile Include="DirectShow\ISpecifyPropertyPages.cs" />
+    <Compile Include="DirectShow\IVideoWindow.cs" />
+    <Compile Include="DirectShow\PhysicalConnectorType.cs" />
+    <Compile Include="DirectShow\Structures.cs" />
+    <Compile Include="DirectShow\Tools.cs" />
+    <Compile Include="DirectShow\Uuids.cs" />
+    <Compile Include="DirectShow\VideoCapabilities.cs" />
+    <Compile Include="DirectShow\VideoCaptureDevice.cs" />
+    <Compile Include="DirectShow\VideoInput.cs" />
+    <Compile Include="DirectShow\Win32.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Video\AsyncVideoSource.cs" />
+    <Compile Include="Video\IVideoSource.cs" />
+    <Compile Include="Video\ScreenCaptureStream.cs" />
+    <Compile Include="Video\VideoEvents.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\MotionDetector.Core.csproj">
+      <Project>{631ac093-430f-45f4-ba0c-af0f0405918a}</Project>
+      <Name>MotionDetector.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Imaging\MotionDetector.Imaging.csproj">
+      <Project>{c6a8b9ae-0749-41c7-8ff9-02c156696f45}</Project>
+      <Name>MotionDetector.Imaging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
